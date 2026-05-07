@@ -5,6 +5,23 @@ Small Python implementation of HUBO-style feature selection with QAOA.
 The repository intentionally contains no dataset-specific code. The main
 function accepts your own feature matrix `X` and target vector `y`.
 
+## Paper Context
+
+This project is inspired by the paper
+[Quantum Feature Selection with Higher-Order Binary Optimization on Trapped-Ion Hardware](https://arxiv.org/abs/2604.26834)
+([PDF](https://arxiv.org/pdf/2604.26834)).
+
+The paper proposes a quantum feature-selection pipeline where feature relevance
+and redundancy are encoded into a higher-order binary optimization objective.
+Informative features are rewarded through mutual information with the target,
+while redundant pairs and triples of features are penalized. The resulting HUBO
+objective is mapped to an Ising Hamiltonian and optimized through a quantum
+sampling procedure.
+
+This repository implements the same core modeling idea in a lightweight,
+dataset-agnostic Python function. It uses QAOA/statevector simulation rather
+than reproducing the paper's trapped-ion hardware workflow exactly.
+
 ## Installation
 
 ```bash
@@ -109,3 +126,7 @@ feature counts, but it does not scale to large `n`.
 
 For larger feature sets, first preselect features with a classical filter or
 replace the objective evaluation with an estimator/sampling-based routine.
+
+## License
+
+This project is released under the MIT License. See [LICENSE](LICENSE).
