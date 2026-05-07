@@ -127,6 +127,3 @@ feature counts, but it does not scale to large `n`.
 For larger feature sets, first preselect features with a classical filter or
 replace the objective evaluation with an estimator/sampling-based routine.
 
-## License
-
-This project is released under the MIT License. See [LICENSE](LICENSE).
